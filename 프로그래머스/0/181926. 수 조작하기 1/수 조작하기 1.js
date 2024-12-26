@@ -1,14 +1,12 @@
 function solution(n, control) {
-    let chars = control.split('');
-    
     for(let i=0; i<control.length; i++) {
-        if (chars[i] === 'w')
+        if (control[i] === 'w')
             n++;
-        else if (chars[i] === 's')
+        else if (control[i] === 's')
             n--;
-        else if (chars[i] === 'd')
+        else if (control[i] === 'd')
             n += 10;
-        else if (chars[i] === 'a')
+        else if (control[i] === 'a')
             n -= 10;
     }
     
