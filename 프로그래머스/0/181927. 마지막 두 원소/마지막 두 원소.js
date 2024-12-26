@@ -1,14 +1,10 @@
 function solution(num_list) {
     let length = num_list.length;
     
-    let last = num_list[length-1];
-    let num;
-    if (num_list[length-2] < last) {
-        num = last - num_list[length-2];
-        num_list.push(num);
+    if (num_list[length - 2] < num_list[length - 1]) {
+        num_list.push(num_list[length - 1] - num_list[length - 2]);
     } else {
-        num = 2 * last;
-        num_list.push(num);
+        num_list.push(2 * num_list[length - 1]);
     }
     
     return num_list;
