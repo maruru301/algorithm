@@ -1,9 +1,10 @@
 function solution(my_string, queries) {
-    let str = my_string;
+    let str = my_string.split('');
     
     queries.forEach(([s, e]) => {
-        str = str.slice(0, s) + str.slice(s, e + 1).split('').reverse().join('') + str.slice(e + 1);
+        let reverseStr = str.slice(s, e + 1);
+        str.splice(s, reverseStr.length, ...reverseStr.reverse());
     });
 
-    return str;
+    return str.join('');
 }
