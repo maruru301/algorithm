@@ -1,6 +1,9 @@
 function solution(arr) {
-    const startIdx = arr.indexOf(2)
-    const endIdx = arr.lastIndexOf(2)
+    const start = arr.indexOf(2);
+    const end = arr.lastIndexOf(2);
     
-    return startIdx+endIdx< 1 ? [-1] : arr.slice(startIdx, endIdx+1)
+    if(start === -1)
+        return [-1];
+    
+    return arr.slice(start, end + 1);
 }
