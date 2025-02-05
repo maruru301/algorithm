@@ -1,11 +1,11 @@
 function solution(myString, pat) {
     let result = 0;
     
-    let pos = myString.indexOf(pat);
+    let idx = myString.indexOf(pat);
     
-    while(pos !== -1) {
+    while(idx !== -1) {
         result++;
-        pos = myString.indexOf(pat, pos + 1);
+        idx = myString.indexOf(pat, idx + 1);
     }
     
     return result;
