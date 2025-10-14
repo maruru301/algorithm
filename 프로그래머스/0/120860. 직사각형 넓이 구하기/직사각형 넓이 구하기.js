@@ -1,20 +1,9 @@
 function solution(dots) {
-    const xArr = [];
-    const yArr = [];
+    const xArr = dots.map(dot => dot[0]);
+    const yArr = dots.map(dot => dot[1]);
     
-    dots.forEach(dot => {
-        const [x, y] = dot
-        
-        xArr.push(x);
-        yArr.push(y);
-    })
-    console.log(xArr, yArr);
-    
-    const newX = new Set(xArr)
-    const newY = new Set(yArr)
-    
-    const resultX = [...newX].sort((a, b) => b - a).reduce((a, b) => a - b);
-    const resultY = [...newY].sort((a, b) => b - a).reduce((a, b) => a - b);
-    
-    return resultX * resultY;
+    const width = Math.max(...xArr) - Math.min(...xArr);
+    const height = Math.max(...yArr) - Math.min(...yArr);
+
+    return width * height;
 }
