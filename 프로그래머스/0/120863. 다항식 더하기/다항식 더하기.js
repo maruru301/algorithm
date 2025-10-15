@@ -1,5 +1,4 @@
 function solution(polynomial) {
-    let result = '';
     let xSum = 0;
     let numSum = 0;
 
