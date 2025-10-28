@@ -1,7 +1,9 @@
 function solution(numbers) {
-    const numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let sum = 0;
     
-    const result = numArr.filter(n => !numbers.includes(n));
+    for (let i = 0; i < 10; i++) {
+        if (!numbers.includes(i)) sum += i
+    }
     
-    return result.reduce((a, b) => a + b, 0);
+    return sum;
 }
