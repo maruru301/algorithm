@@ -1,8 +1,8 @@
 function solution(s) {
-    const mid = s.length / 2;
+    const mid = Math.floor(s.length / 2);
     
     if (s.length % 2) {
-        return s[Math.floor(mid)]
+        return s[mid]
     } else {
         return s.slice(mid - 1, mid + 1)
     }
