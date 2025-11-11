@@ -3,13 +3,15 @@ function solution(babbling) {
     let result = 0;
     
     babbling.forEach(b => {
-        let count = 0;
+        let matchedLength = 0;
         
         words.forEach(word => {
-            if (b.includes(word)) count += word.length;
+            // 발음이 포함되면 길이 합산
+            if (b.includes(word)) matchedLength += word.length; 
         });
         
-        if (count === b.length) result++;
+        // 전체 문자열 길이와 같으면 카운트
+        if (matchedLength === b.length) result++;
     })
     
     return result;
