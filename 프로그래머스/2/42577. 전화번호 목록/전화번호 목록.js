@@ -1,10 +1,9 @@
 function solution(phone_book) {
-    const map = new Map();
-    phone_book.forEach(num => map.set(num, true));
+    phone_book.sort(); // 사전 순 정렬
 
-    for (const num of phone_book) {
-        for (let i = 1; i < num.length; i++) {
-            if (map.has(num.slice(0, i))) return false;
+    for (let i = 0; i < phone_book.length - 1; i++) {
+        if (phone_book[i + 1].startsWith(phone_book[i])) {
+            return false;
         }
     }
     return true;
